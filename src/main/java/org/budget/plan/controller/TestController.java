@@ -12,7 +12,7 @@ import static org.budget.plan.entity.collection.Role.USER;
 
 @Controller
 public class TestController {
-    private UserRepository repository;
+    private final UserRepository repository;
 
     public TestController(UserRepository repository) {
         this.repository = repository;

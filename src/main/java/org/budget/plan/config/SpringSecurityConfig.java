@@ -9,8 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
 public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
-    private UserDetailsService userDetailsService;
-    private PasswordEncoder encoder;
+    private final UserDetailsService userDetailsService;
+    private final PasswordEncoder encoder;
 
     public SpringSecurityConfig(UserDetailsService userDetailsService, PasswordEncoder encoder) {
         this.userDetailsService = userDetailsService;

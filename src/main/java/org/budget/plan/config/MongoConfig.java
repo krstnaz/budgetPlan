@@ -25,6 +25,11 @@ public class MongoConfig extends AbstractMongoClientConfiguration {
         return converter;
     }
 
+    @Bean
+    public ConnectionTimeoutMongoSettingsCustomizer mongoSettingsCustomizer(@Value("${spring.data.mongodb.connection-timeout}") Integer connectionTimeout) {
+        return new ConnectionTimeoutMongoSettingsCustomizer(connectionTimeout);
+    }
+
     @Override
     protected boolean autoIndexCreation() {
         return true;
